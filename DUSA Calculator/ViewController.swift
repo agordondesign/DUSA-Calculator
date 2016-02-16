@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SegueManager
 
 class ViewController: UIViewController {
 

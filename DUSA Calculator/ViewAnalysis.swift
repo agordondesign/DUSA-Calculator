@@ -8,21 +8,57 @@
 
 import Foundation
 import UIKit
+//import SegueManager
+
 
 class ViewAnalysis : UIViewController {
     
-    @IBOutlet weak var AccountField: UITextField!
+    //lazy var segueManager : SegueManager = { return SegueManager(viewController : self) }()
+    
+    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //    segueManager.prepareForSegue(segue)
+    //}
+    
+    @IBOutlet weak var AccountField : UITextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func prepareForSegue(segue : UIStoryboardSegue, sender: AnyObject?) {
         
+        let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
+        DestViewController.AccountLabelText = AccountField.text!
         
     }
     
+    
+    /*
+    segueManager.performSegue("Summary") { (details: DetailsViewController) in
+        details.viewModel = DetailsViewModel("This is the details view model")
+    }*/
+}
+
+/*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
-       
-        DestViewController.AccountLabelText = AccountField.text!
+        
+    
+        if segue.identifier == "Summary" {
+            let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
+            DestViewController.AccountLabelText = AccountField.text!
+        }
+        
+        if segue.identifier == "Summary" {
+            let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
+            DestViewController.AccountLabelText = AccountField.text!
+        }
+        
+        else if segue.identifier == "GPCI" {
+            //let DestViewController : ViewGPCI = segue.destinationViewController as! ViewGPCI
+            //DestViewController.AccountLabelText = AccountField.text!
+        }
+    
     }
+*/
 
-}

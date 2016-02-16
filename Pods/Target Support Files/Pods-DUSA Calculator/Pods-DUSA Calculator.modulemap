@@ -1,0 +1,6 @@
+framework module Pods_DUSA_Calculator {
+  umbrella header "Pods-DUSA Calculator-umbrella.h"
+
+  export *
+  module * { export * }
+}
