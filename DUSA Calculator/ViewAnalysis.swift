@@ -27,8 +27,14 @@ class ViewAnalysis : UIViewController {
     
     override func prepareForSegue(segue : UIStoryboardSegue, sender: AnyObject?) {
         
-        let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
-        DestViewController.AccountLabelText = AccountField.text!
+        if segue.identifier == "Summary" {
+            if let DestViewController = segue.destinationViewController as? ViewSummary {
+                DestViewController.AccountLabelText = AccountField.text!
+            }
+        }
+        
+        //let DestViewController : ViewSummary = segue.destinationViewController as! ViewSummary
+        //DestViewController.AccountLabelText = AccountField.text!
         
     }
     
